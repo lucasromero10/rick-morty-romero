@@ -54,6 +54,11 @@
                   width: 80%;
                 }
   
+button{
+  margin: 5%;
+  border-radius: 5%;
+  background-color: darkgrey;
+}              
   
 
   

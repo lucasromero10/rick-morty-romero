@@ -15,6 +15,7 @@ class Personajes extends Component{
         this.setState({
             color: colorNuevo
         })
+
     }
 
     render() {
