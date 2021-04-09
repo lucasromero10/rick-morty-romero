@@ -1,33 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function Personajes(props) {
-    return(
-        <React.Fragment> 
+class Personajes extends Component{
+    render() {
+        return (
             <div className="Personaje-1">
-            <img src={props.personaje.image} alt="" />
+            <img src={this.props.personaje.image} alt="" />
 
             <h4>
-                {props.personaje.name}
+                {this.props.personaje.name}
             </h4>
 
             <p>
-            {props.personaje.status}
+            {this.props.personaje.status}
 
             </p>
 
             <p>
-            {props.personaje.species}
+            {this.props.personaje.species}
 
             </p>
 
             <p>
                 Origin: 
-            {props.personaje.origin.name}
+            {this.props.personaje.origin.name}
 
             </p>
             </div>
-        </React.Fragment>
-    );
+        );
+    };
 }
 
 export default Personajes;
