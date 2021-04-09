@@ -41,6 +41,7 @@
   img{
       margin-top: 5%;
       border-radius: 50%;
+      width: 50%;
   }
 
   .Main-DIV { grid-area: 2 / 1 / 4 / 4; }
@@ -49,7 +50,8 @@
                   background-color: #f9f9f9;
                   border-radius: 5%;
                   text-align: center;
-                    
+                  box-shadow: 3px 4px; 
+                  width: 80%;
                 }
   
   

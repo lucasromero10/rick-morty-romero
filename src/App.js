@@ -25,7 +25,7 @@ function App() {
                   arrayRickAndMorty.map(function (personaje, idx) {
                     return(
                       <div key={ idx }>
-                           <Personajes personaje={personaje} />
+                           <Personajes color="#f9f9f9" highlightColor="green" selectionColor="red" personaje={personaje} />
                       </div>
                     )
                   })
