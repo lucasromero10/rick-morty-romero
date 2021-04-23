@@ -3,11 +3,30 @@ import Header from './componentes/Header'
 import Personajes from './componentes/Personajes'
 import Footer from './componentes/Footer'
 
-import arrayRickAndMorty from './rickandmorty.json';
+export default class App extends Component {
 
-console.log(arrayRickAndMorty);
+  constructor(){
+    super();
+    this.state = {
+      arrayTarjeta: [],
+      search: " ",
+    }
+  };
 
-function App() {
+  componentDidMount(){
+    fetch("https://randomuser.me/api/?results=21")
+    .then(r => r.json())
+    .then((resultado)=>{
+      //console.log(resultado)
+      this.setState({
+        arrayTarjeta: resultado.results});
+      
+    })
+    .catch((e)=> console.log(e))
+  }
+  
+
+render() {
   return (
     <div className="App">
 
@@ -22,14 +41,12 @@ function App() {
 
            
           {
-                  arrayRickAndMorty.map(function (personaje, idx) {
-                    return(
-                      <div key={ idx }>
-                           <Personajes color="#f9f9f9" highlightColor="green" selectionColor="red" personaje={personaje} />
-                      </div>
-                    )
-                  })
-          }
+                  this.state.arrayTarjeta.map((item) => {
+                    return <Personajes
+                    key = {item.id}
+                    elemento = {item}
+                  }))
+          
 
         </div>
 
@@ -39,7 +56,6 @@ function App() {
 
 
     </div>
-  );
+    );
+  }
 }
-
-export default App;

@@ -20,29 +20,33 @@ class Personajes extends Component{
 
     render() {
         return (
+            <React.Fragment>  
+
             <div className="Personaje-1" style={{backgroundColor: this.state.color}}
             onMouseEnter={() => this.CambiarColor(this.props.highlightColor)}
             onMouseLeave={() => this.CambiarColor(this.props.color)}>
 
-                <img src={this.props.personaje.image} alt="" />
+                <img src={this.props.elemento.picture.large} alt="" />
 
                 <h4>
-                    {this.props.personaje.name}
+                   Apellido: {this.props.elemento.name.last}
                 </h4>
 
                 <p>
-                {this.props.personaje.status}
+                 
+                 Nombre: {this.props.elemento.name.first}
 
                 </p>
 
                 <p>
-                {this.props.personaje.species}
+                
+                 Email: {this.props.elemento.email}
 
                 </p>
 
                 <p>
-                    Origin: 
-                {this.props.personaje.origin.name}
+                
+                Fecha de Nacimiento: {this.props.elemento.dob.date}
 
                 </p>
 
@@ -50,6 +54,8 @@ class Personajes extends Component{
                     Cambiar Color
                 </button>
             </div>
+            </React.Fragment>       
+
         );
     };
 }
